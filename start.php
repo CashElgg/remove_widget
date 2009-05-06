@@ -23,8 +23,7 @@
 		include($CONFIG->pluginspath . "remove_widget/index.php"); 
 	}
 	
-	
-	
+		
 	register_elgg_event_handler('init','system','removewidget_init');
 	register_elgg_event_handler('pagesetup','system','removewidget_pagesetup');
 ?>

@@ -15,7 +15,6 @@
 	foreach($CONFIG->widgets->handlers as $handler => $widget)
 	{
 	  $possible_widgets[$handler] = $widget->name;
-    //$body .= $widget->name . " " . $handler . "<br />";
   }
   asort($possible_widgets);
   $form_body .= elgg_view('input/pulldown', array(
@@ -23,14 +22,12 @@
 			  'options_values' => $possible_widgets,
 		));
 	
-	$form_body .= '<br />' . elgg_view('input/submit', array('internalname' => 'remove', 'value' => elgg_echo('remove')));
+	$form_body .= '<br />' . elgg_view('input/submit', array('internalname' => 'remove', 'value' => elgg_echo('remove_widget:remove')));
 	
 	$form_body .= '</div>';
   	
 	$body .= elgg_view('input/form', array('body' => $form_body, 'action' => $CONFIG->url . 'action/remove_widget/remove'));
   
-  		
-// Display main admin menu
 	page_draw(elgg_echo('remove_widgets'),elgg_view_layout("two_column_left_sidebar", '', $body));
 
 ?>
